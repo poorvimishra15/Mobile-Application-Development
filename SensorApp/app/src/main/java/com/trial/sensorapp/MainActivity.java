@@ -64,17 +64,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             lightData.setText(lux + " lx");
         }
 
-        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-            float distance = event.values[0];
-            if (distance == 0) {
-                proximityData.setText("Near");
-                getWindow().getDecorView().setBackgroundColor(0xFF000000);
-            } else {
-                proximityData.setText("Far");
-                getWindow().getDecorView().setBackgroundColor(0xFF0F172A);
-            }
+        float value = event.values[0];
+        if (value <= proximity.getMaximumRange()) {
+            proximityData.setText("Near");
+            proximityData.setTextColor(Color.RED);
+        } else if (value > proximity.getMaximumRange()) {
+            proximityData.setText("Far");
+            proximityData.setTextColor(Color.GREEN);
         }
     }
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
