@@ -1,0 +1,41 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/detailImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="186dp"
+        android:layout_height="70dp" />
+
+    <TextView
+        android:id="@+id/txtPath"
+        android:layout_width="190dp"
+        android:layout_height="90dp" />
+
+    <TextView
+        android:id="@+id/txtSize"
+        android:layout_width="204dp"
+        android:layout_height="52dp" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="206dp"
+        android:layout_height="74dp" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="172dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#FF4444"
+        android:text="Delete Image"
+        android:textColor="@android:color/white" />
+</LinearLayout>
